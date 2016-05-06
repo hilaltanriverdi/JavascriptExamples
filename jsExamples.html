@@ -1,0 +1,88 @@
+<html>
+<head>
+<style>
+
+<title>Sayfa basligi</title>
+</style>
+</head>
+
+<body>
+1)Faktoriyel Sonucu:<p id="demo1"></p></br>
+2)sayi polindrom mu? :<p id="demo2"></p></br>
+3)Asal sayi mi? :<p id="demo3"></p></br>
+4)Tekrarlamayan ifadeler :<p id="demo4"></p></br>
+5)Sirala :<p id="demo5"></p></br>
+6)Fonksiyon ismini yaz :<p id="demo6"></p></br>
+
+
+<script>
+
+function faktoriyel(a){
+	var result=1;
+	for(i=2;i<=a;i++){
+		result=result*i;
+	}
+	return result;
+}
+
+
+function polindrom_mu(string) {
+    var str = string.toLowerCase().match(/\w/g).join(""),
+        reverse = str.split('').reverse().join('');
+    return str === reverse;
+}
+
+
+function asal_mi(sayi){
+	var sayi,i,x=0;
+	for(i=2;i<=sayi/2;i++){
+		if(sayi%i==0){
+			x++;
+		}
+	}
+	if(x==0) return "asal sayi";
+	else return "asal degil";
+}
+
+
+function tekrarlanmayanlari_bul( string ){
+    var unique='';
+	
+    for(var i=0; i<string.length; i++){
+        if(string.lastIndexOf(string[i]) == string.indexOf(string[i])){
+            unique += string[i];
+        }
+    }
+    return unique;
+}
+
+
+
+function sirala(str) { 
+   var arr = str.split('').sort().join('');
+   
+   return arr; 
+}
+
+
+function isim_yaz(example){
+
+	return example.name;
+}
+
+
+document.getElementById("demo1").innerHTML=faktoriyel(5);
+document.getElementById("demo2").innerHTML=polindrom_mu("makam");
+document.getElementById("demo3").innerHTML=asal_mi(12);
+document.getElementById("demo4").innerHTML=tekrarlanmayanlari_bul("hava");
+document.getElementById("demo5").innerHTML=sirala("spring");
+document.getElementById("demo6").innerHTML=isim_yaz(sirala);
+
+
+
+
+</script>
+
+</body>
+
+</html>
