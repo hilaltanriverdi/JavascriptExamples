@@ -65,9 +65,8 @@ function sirala(str) {
 }
 
 
-function isim_yaz(example){
-
-	return example.name;
+function isim_yaz(){
+	return arguments.callee.name;
 }
 
 
@@ -76,7 +75,7 @@ document.getElementById("demo2").innerHTML=polindrom_mu("makam");
 document.getElementById("demo3").innerHTML=asal_mi(12);
 document.getElementById("demo4").innerHTML=tekrarlanmayanlari_bul("hava");
 document.getElementById("demo5").innerHTML=sirala("spring");
-document.getElementById("demo6").innerHTML=isim_yaz(sirala);
+document.getElementById("demo6").innerHTML=isim_yaz();
 
 
 
